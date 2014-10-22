@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6249" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6243"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ShowPhotos" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e30-38-5sq">
+                                <rect key="frame" x="244" y="56" width="113" height="30"/>
+                                <state key="normal" title="Show Panorama">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="S8S-NS-3Cc" kind="show" identifier="showPanorama" id="Wha-Mm-WYF"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="toM-te-xX6">
+                                <rect key="frame" x="252" y="129" width="97" height="30"/>
+                                <state key="normal" title="Show Flowers">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="S8S-NS-3Cc" kind="show" identifier="showFlowers" id="zQd-81-KrT"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="e30-38-5sq" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="36" id="d4H-ZO-jT9"/>
+                            <constraint firstItem="toM-te-xX6" firstAttribute="top" secondItem="e30-38-5sq" secondAttribute="bottom" constant="43" id="fWg-lD-2wS"/>
+                            <constraint firstAttribute="centerX" secondItem="toM-te-xX6" secondAttribute="centerX" constant="-0.5" id="n51-q1-awP"/>
+                            <constraint firstAttribute="centerX" secondItem="e30-38-5sq" secondAttribute="centerX" constant="-0.5" id="r3B-mF-79Q"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="240" y="345"/>
+        </scene>
+        <!--Photo View Controller-->
+        <scene sceneID="kxR-3e-im7">
+            <objects>
+                <viewController id="S8S-NS-3Cc" customClass="PhotoViewController" customModule="ShowPhotos" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fmJ-eB-ZLP"/>
+                        <viewControllerLayoutGuide type="bottom" id="afd-Zq-7T1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="i80-2A-TFZ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BNV-vS-i1u">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I0n-lf-WbQ">
+                                <rect key="frame" x="16" y="20" width="49" height="30"/>
+                                <state key="normal" title="&lt; Back">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="QQl-dF-8BU" kind="unwind" unwindAction="unwindSegue:" id="SWz-Jn-m27"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="BNV-vS-i1u" firstAttribute="top" secondItem="i80-2A-TFZ" secondAttribute="top" id="2ty-7V-ql6"/>
+                            <constraint firstItem="afd-Zq-7T1" firstAttribute="top" secondItem="BNV-vS-i1u" secondAttribute="bottom" id="Pje-Ml-n9T"/>
+                            <constraint firstItem="I0n-lf-WbQ" firstAttribute="top" secondItem="fmJ-eB-ZLP" secondAttribute="bottom" id="SMh-Dv-0CR"/>
+                            <constraint firstItem="BNV-vS-i1u" firstAttribute="leading" secondItem="i80-2A-TFZ" secondAttribute="leading" id="WFB-gO-oF8"/>
+                            <constraint firstItem="I0n-lf-WbQ" firstAttribute="leading" secondItem="i80-2A-TFZ" secondAttribute="leading" constant="16" id="hse-S9-uwh"/>
+                            <constraint firstAttribute="trailing" secondItem="BNV-vS-i1u" secondAttribute="trailing" id="qMY-7i-EzY"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backgrounImageView" destination="BNV-vS-i1u" id="EeG-YX-kA3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RN2-xY-8iP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="QQl-dF-8BU" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1079" y="345"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Wha-Mm-WYF"/>
+    </inferredMetricsTieBreakers>
+</document>
