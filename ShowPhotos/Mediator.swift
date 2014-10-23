@@ -8,6 +8,11 @@
 
 import UIKit
 
+enum AppSegues: String {
+    case showPanoramaSegue = "showPanorama"
+    case showFlowersSegue = "showFlowers"
+}
+
 class Mediator {
     
     //MARK: PUBLIC
@@ -15,14 +20,17 @@ class Mediator {
         
         let destinationViewController = segue.destinationViewController as PhotoViewController
         
-        if segue.identifier == "showPanorama" {
+        if let _identifier = AppSegues(rawValue: segue.identifier!) {
             
-            destinationViewController.image = UIImage(named: "panorama")
-            
-        } else if segue.identifier == "showFlowers" {
-            
-            destinationViewController.image = UIImage(named: "flowers")
+            switch _identifier {
+                
+            case .showPanoramaSegue:
+                destinationViewController.image = UIImage(named: "panorama")
+                
+            case .showFlowersSegue:
+                destinationViewController.image = UIImage(named: "flowers")
+                
+            }
         }
     }
-
 }
